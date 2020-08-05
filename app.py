@@ -22,7 +22,7 @@ year_group_pollutant = total_data.groupby(by = 'Pollutant')['Value'].sum()
 
 app = dash.Dash(__name__)
 app.config.suppress_callback_exceptions = True
-
+server = app.server
 
 fossil_bar =  go.Figure(go.Bar(x = year_group_pollutant[::-1], y = year_group_pollutant.index[::-1], orientation='h',marker=dict(color='#f5961d')))
 fossil_bar.update_layout(
